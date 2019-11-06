@@ -3,7 +3,7 @@
     <li>
        <span v-bind:class="{done: todo.completed}">
            <input type="checkbox" v-on:change="todo.completed = !todo.completed">
-           {{todo.title}}
+           {{todo.title1}}
        </span>
        <el-button type="danger" icon="el-icon-delete" class="btn-remove"  v-on:click="$emit('remove-todo', todo.id)"></el-button>
     </li>

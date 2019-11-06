@@ -2,9 +2,15 @@
   <div >
       
       <form @submit.prevent="onSubmit">
-        <input type="text" v-model="title">
-        <button type="submit">Add</button>
+        Name:
+        <input type="text" v-model="title1">
+        Email:
+        <input type="text" v-model="title2">
+          <b-form-select v-model="selected" :options="options" size="sm" class="mt-3"></b-form-select>
+          <button type="submit">Add</button>
+          
     </form>
+    
   </div>
 </template>
 
@@ -12,24 +18,35 @@
   export default {
       data(){
           return{
-              title: ''
+            
+              title1: '',
+              title2:'',
+              selected: null,
+              options: [
+                    {value:null,text:'Select'},
+                    {text:'Chairman'},
+                    {text:'Vice Chairman'},
+                    {text:'President'},
+                    {text:'Vice-President'},
+                    {text:'Senior Advisor'},
+                    {text:'General Manager'},
+                ]
+              
           }
       },
       methods: {
         onSubmit() {
-           if (this.title.trim()) {
+           if (this.title1.trim()) {
                const newTodo = {
                    id: Date.now(),
-                   title: this.title,
+                   title1: this.title1,
                    completed: false
                }
                this.$emit('add-todo', newTodo)
-               this.title=""
+               this.title1=""
            }
-        }
+        },    
     }
-
-
   }
 </script>
 

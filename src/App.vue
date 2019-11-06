@@ -1,19 +1,14 @@
 <template>
 <div id="app">
-  
-  
+  <b-table striped hover :items="items"></b-table>
    <main id="todolist">
-      <h1>
-      </h1>
       <Todolist v-bind:todos="todos" 
       @remove-todo="removeTodo" v-if="todos.length"
         />
-      <p class="emptylist" v-else>Empty</p>
+      <p class="emptylist" v-else></p>
       <Newtark @add-todo="addTodo"/>
     </main>
 </div>
-  
-  
 </template> 
 
 <script>
@@ -24,6 +19,9 @@ export default {
    name: 'app',
   data() {
     return {
+       items: [
+          { Name: '',Email: '', Department: '' },
+        ],
       todos: [
         
       ]
@@ -33,10 +31,10 @@ export default {
   },
   methods: {
     removeTodo(id) {
-      this.todos = this.todos.filter(t=> t.id !== id)
+      this.todos=this.todos.filter(t => t.id!==id);
     },
     addTodo(todo) {
-      this.todos.push(todo)
+      this.todos.push(todo);
     }
   },
   components: {
