@@ -2,14 +2,9 @@
   <div >
       
       <form @submit.prevent="onSubmit">
-        Name:
         <input type="text" v-model="title1">
-        Email:
-        <input type="text" v-model="title2">
-          <b-form-select v-model="selected" :options="options" size="sm" class="mt-3"></b-form-select>
-          <button type="submit">Add</button>
-          
-    </form>
+          <button type="submit">Add</button>    
+      </form>
     
   </div>
 </template>
@@ -20,17 +15,6 @@
           return{
             
               title1: '',
-              title2:'',
-              selected: null,
-              options: [
-                    {value:null,text:'Select'},
-                    {text:'Chairman'},
-                    {text:'Vice Chairman'},
-                    {text:'President'},
-                    {text:'Vice-President'},
-                    {text:'Senior Advisor'},
-                    {text:'General Manager'},
-                ]
               
           }
       },

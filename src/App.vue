@@ -1,11 +1,10 @@
 <template>
 <div id="app">
-  <b-table striped hover :items="items"></b-table>
    <main id="todolist">
       <Todolist v-bind:todos="todos" 
       @remove-todo="removeTodo" v-if="todos.length"
         />
-      <p class="emptylist" v-else></p>
+      <p class="emptylist" v-else>Empty</p>
       <Newtark @add-todo="addTodo"/>
     </main>
 </div>
@@ -19,9 +18,6 @@ export default {
    name: 'app',
   data() {
     return {
-       items: [
-          { Name: '',Email: '', Department: '' },
-        ],
       todos: [
         
       ]
